@@ -16,7 +16,20 @@ bool gameOver = false;
 
 int[] colorSequence = new int[limitRounds];
 
-Console.WriteLine("\n-- GENIUS --\n");
+Console.CursorVisible = false;
+
+Console.Clear();
+
+Console.ForegroundColor = colors[0];
+Console.Write("---- ");
+Console.ForegroundColor = colors[1];
+Console.Write("GEN");
+Console.ForegroundColor = colors[2];
+Console.Write("IUS ");
+Console.ForegroundColor = colors[3];
+Console.WriteLine("----\n");
+
+Console.ResetColor();
 
 Console.WriteLine("Pressione espaço para jogar...");
 
@@ -32,6 +45,8 @@ while (true)
 Console.Clear();
 
 Loop(ref gameOver);
+
+Console.CursorVisible = true;
 
 if (gameOver)
 {
@@ -116,7 +131,7 @@ void ShowColor( ConsoleColor[] colors, ref string machine, ref int freq, int sp)
             Thread.Sleep(sp);
         }
 
-
+    Console.Clear();
     Console.WriteLine();
 
 }
